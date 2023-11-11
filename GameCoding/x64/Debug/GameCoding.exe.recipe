@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>G:\DirecX11\DX11_Projects\GameCoding\DX11_Study\Binaries\GameCoding.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>G:\DirecX11\DX11_Projects\GameCoding\DX11_Study\Binaries\Color.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>G:\DirecX11\DX11_Projects\GameCoding\DX11_Study\Binaries\Default.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
