@@ -1,6 +1,8 @@
 #pragma once
 
 class MonoBehavior;
+class Trnasform;
+class Camera;
 
 class GameObject : public enable_shared_from_this<GameObject>
 {
@@ -19,9 +21,12 @@ public:
 	void AddComponent(shared_ptr<Component> component);
 
 public:
-	shared_ptr<Component> GetFixedComponent(ComponentType type);
-	shared_ptr<Transform> GetTransform();
-	shared_ptr<Transform> GetOrAddTransform();
+	shared_ptr<Component>	GetFixedComponent(ComponentType type);
+	shared_ptr<Transform>	GetTransform();
+	shared_ptr<Transform>	GetOrAddTransform();
+	shared_ptr<Camera>		GetCamera();
+	shared_ptr<Camera>		GetOrAddCamera();
+
 
 	// ..
 
@@ -60,9 +65,13 @@ protected:
 	vector<shared_ptr<MonoBehavior>> _scripts;
 
 private:
+	// Camera
+	CameraData									_cameraData;
+	shared_ptr<ConstantBuffer<CameraData>>		_cameraBuffer;
+
 	// SRT
 	TransformData								_transformData;
-	shared_ptr<ConstantBuffer<TransformData>>	_constantBuffer;
+	shared_ptr<ConstantBuffer<TransformData>>	_transformBuffer;
 
 private:
 	shared_ptr<Transform> _transform = make_shared<Transform>();

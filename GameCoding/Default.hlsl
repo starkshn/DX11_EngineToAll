@@ -11,11 +11,15 @@ struct VS_OUTPUT
     float2 uv       : TEXCOORD;
 };
 
-cbuffer TransformData : register(b0)
+cbuffer CameraData : register(b0)
 {
-    row_major matrix matWorld;
     row_major matrix matView;
     row_major matrix matProjection;
+}
+
+cbuffer TransformData : register(b1)
+{
+    row_major matrix matWorld;
 }
 
 // IA - VS - RS - PS - OM
@@ -35,8 +39,6 @@ VS_OUTPUT VS(VS_INPUT input)
     
     return output;
 }
-
-
 
 Texture2D texture0 : register(t0);
 // Texture2D texture1 : register(t1);

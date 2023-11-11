@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Game.h"
 #include "Camera.h"
+#include "GameObject.h"
 
 Game::Game()
 {

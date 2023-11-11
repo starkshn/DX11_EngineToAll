@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "MonoBehavior.h"
 #include "Transform.h"
+#include "Camera.h"
 
 
 GameObject::GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext)
@@ -42,8 +43,11 @@ GameObject::GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> 
 	_blendState->Create();
 
 	// 9. 상수 버퍼
-	_constantBuffer = make_shared<ConstantBuffer<TransformData>>(_device, _deviceContext);
-	_constantBuffer->Create();
+	_cameraBuffer = make_shared<ConstantBuffer<CameraData>>(_device, _deviceContext);
+	_cameraBuffer->Create();
+
+	_transformBuffer = make_shared<ConstantBuffer<TransformData>>(_device, _deviceContext);
+	_transformBuffer->Create();
 
 	// 10. 
 	_texture1 = make_shared<Texture>(_device);
@@ -99,10 +103,26 @@ void GameObject::Update()
 		script->Update();
 	}
 
+	
+	if (GetCamera()) 
+		return;
+
+	// Camera
+	_cameraData.matView = Camera::S_MatView;
+	_cameraData.matProjection = Camera::S_MatProjection;
+	// _cameraData.matView = Matrix::Identity;
+	// _cameraData.matProjection = Matrix::Identity;
+
+	// CPU -> GPU로의 데이터 복사
+	_cameraBuffer->CopyData(_cameraData);
+	
+
+	// 일반 GameObject (Monster)
 	_transformData.matWorld = GetOrAddTransform()->GetWorldMatrix();
 
 	// CPU -> GPU로의 데이터 복사
-	_constantBuffer->CopyData(_transformData);
+	_transformBuffer->CopyData(_transformData);
+	
 }
 
 void GameObject::LateUpdate()
@@ -157,6 +177,23 @@ shared_ptr<Transform> GameObject::GetOrAddTransform()
 	return GetTransform();
 }
 
+shared_ptr<Camera> GameObject::GetCamera()
+{
+	shared_ptr<Component> comp = GetFixedComponent(ComponentType::Camera);
+	return static_pointer_cast<Camera>(comp);
+}
+
+shared_ptr<Camera> GameObject::GetOrAddCamera()
+{
+	if (GetCamera() == nullptr)
+	{
+		shared_ptr<Camera> camera = make_shared<Camera>();
+		AddComponent(camera);
+	}
+
+	return GetCamera();
+}
+
 void GameObject::AddComponent(shared_ptr<Component> component)
 {
 	// this의 스마트 포인터 버젼
@@ -190,7 +227,8 @@ void GameObject::Render(shared_ptr<Pipeline> pipeline)
 	pipeline->SetIndexBuffer(_indexBuffer);
 
 	// VS
-	pipeline->SetConstantBuffer(0, SS_VertexShader, _constantBuffer);
+	pipeline->SetConstantBuffer(0, SS_VertexShader, _cameraBuffer);
+	pipeline->SetConstantBuffer(1, SS_VertexShader, _transformBuffer);
 
 	// RS
 
