@@ -2,6 +2,7 @@
 #include "Game.h"
 #include "Camera.h"
 #include "GameObject.h"
+#include "MeshRenderer.h"
 
 Game::Game()
 {
@@ -23,6 +24,7 @@ void Game::Init(HWND hWnd)
 	_monster = make_shared<GameObject>(_graphcis->GetDevice(), _graphcis->GetDeviceContext());
 	{
 		_monster->GetOrAddTransform();
+		_monster->AddComponent(make_shared<MeshRenderer>(_graphcis->GetDevice(), _graphcis->GetDeviceContext()));
 		// ..
 	}
 
@@ -44,7 +46,10 @@ void Game::Render()
 	_graphcis->RenderBegin();
 
 	{
-		_monster->Render(_pipeline);
+		// TEMP
+		_monster->GetMeshRenderer()->Render(_pipeline);
+
+		// _monster->Render(_pipeline);
 	}
 
 	_graphcis->RenderEnd();
