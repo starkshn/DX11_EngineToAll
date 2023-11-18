@@ -33,8 +33,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         return FALSE;
     }
 
-    Game game;
-    game.Init(hWnd);
+    GAME->Init(hWnd);
     MSG msg = {};
 
     // 기본 메시지 루프입니다:
@@ -47,8 +46,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            game.Update();
-            game.Render();
+            GAME->Update();
+            GAME->Render();
         }
     }
 

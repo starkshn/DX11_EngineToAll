@@ -2,6 +2,8 @@
 
 #include "GameObject.h"
 
+class SceneManager;
+
 class Game
 {
 public:
@@ -13,15 +15,19 @@ public:
 	void Update();
 	void Render();
 
+public:
+	shared_ptr<SceneManager> GetSceneManager() { return _sceneManager; }
+
 private:
 	HWND					_hWnd;
 
 private:
 	shared_ptr<Graphics>	_graphcis;
 	shared_ptr<Pipeline>	_pipeline;
-	
+
 private:
-	// Temp
-	shared_ptr<GameObject>	_monster;
-	shared_ptr<GameObject>	_camera;
+	shared_ptr<SceneManager> _sceneManager;
+
 };
+
+extern unique_ptr<Game> GGame;

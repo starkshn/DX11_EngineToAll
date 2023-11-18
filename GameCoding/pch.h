@@ -50,6 +50,10 @@ using namespace Microsoft::WRL;
 #define Z(p, s) ZeroMemory(p, s)
 #define H		HRESULT
 
+// GetManager
+#define GAME	GGame
+#define SCENE	GAME->GetSceneManager()
+
 
 // Class Wrapping
 
@@ -69,3 +73,4 @@ using namespace Microsoft::WRL;
 #include "BlendState.h"
 #include "Pipeline.h"
 #include "Transform.h"
+#include "Game.h"

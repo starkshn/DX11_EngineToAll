@@ -16,6 +16,8 @@ G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\pch.cpp;G:\DirecX11\DX11_P
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Pipeline.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Pipeline.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\RasterizerState.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\RasterizerState.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\SamplerState.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\SamplerState.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Scene.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Scene.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\SceneManager.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\SceneManager.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Shader.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Shader.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\SimpleMath.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\SimpleMath.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Texture.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Texture.obj
