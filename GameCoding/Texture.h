@@ -1,9 +1,13 @@
 #pragma once
-class Texture
+#include "ResourceBase.h"
+
+class Texture : public ResourceBase
 {
+	using Super = ResourceBase;
+
 public:
 	Texture(ComPtr<ID3D11Device> device);
-	~Texture();
+	virtual ~Texture() override;
 
 public:
 	void Create(const wstring& path);

@@ -50,9 +50,13 @@ using namespace Microsoft::WRL;
 #define Z(p, s) ZeroMemory(p, s)
 #define H		HRESULT
 
-// GetManager
-#define GAME	GGame
-#define SCENE	GAME->GetSceneManager()
+// Manager
+#define		GAME		GGame
+#define		SCENE		GAME->GetSceneManager()
+#define		PIPE		GAME->GetPipeline()
+#define		TIME		GAME->GetTimeManager()
+#define		INPUT		GAME->GetInputManager()
+#define		RESOURCES	GAME->GetResourceManager()
 
 
 // Class Wrapping
@@ -65,7 +69,7 @@ using namespace Microsoft::WRL;
 #include "Geometry.h"
 #include "GeometryHelper.h"
 #include "VertexData.h"
-#include "Shader.h"
+#include "ShaderBase.h"
 #include "ConstantBuffer.h"
 #include "Texture.h"
 #include "RasterizerState.h"

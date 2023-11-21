@@ -2,12 +2,15 @@
 #include "Texture.h"
 
 Texture::Texture(ComPtr<ID3D11Device> device)
-	: _device(device)
+	: Super(ResourceType::Texture),
+	_device(device)
 {
+
 }
 
 Texture::~Texture()
 {
+
 }
 
 void Texture::Create(const wstring& path)

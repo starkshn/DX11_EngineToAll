@@ -5,6 +5,9 @@
 #include "MeshRenderer.h"
 #include "Scene.h"
 #include "SceneManager.h"
+#include "TimeManager.h"
+#include "InputManager.h"
+#include "ResourceManager.h"
 
 unique_ptr<Game> GGame = make_unique<Game>();
 
@@ -26,6 +29,16 @@ void Game::Init(HWND hWnd)
 	_pipeline		= make_shared<Pipeline>(_graphcis->GetDeviceContext());
 
 	_sceneManager	= make_shared<SceneManager>(_graphcis);
+	_sceneManager->Init();
+
+	_timeManager	= make_shared<TimeManager>();
+	_timeManager->Init();
+
+	_inputManager	= make_shared<InputManager>();
+	_inputManager->Init(_hWnd);
+
+	_resourceManager = make_shared<ResourceManager>(_graphcis->GetDevice());
+	_resourceManager->Init();
 
 	SCENE->LoadScene(L"Test");
 }
@@ -34,8 +47,10 @@ void Game::Update()
 {
 	_graphcis->RenderBegin();
 
+	TIME->Update();
+	INPUT->Update();
 	SCENE->Update();
-
+	
 	_graphcis->RenderEnd();
 }
 
