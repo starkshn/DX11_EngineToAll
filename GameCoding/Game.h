@@ -6,6 +6,7 @@ class SceneManager;
 class TimeManager;
 class InputManager;
 class ResourceManager;
+class RenderManager;
 
 class Pipeline;
 
@@ -25,21 +26,20 @@ public:
 	shared_ptr<TimeManager>		GetTimeManager() { return _timeManager; }
 	shared_ptr<InputManager>	GetInputManager() { return _inputManager; }
 	shared_ptr<ResourceManager>	GetResourceManager() { return _resourceManager; }
-
-	shared_ptr<Pipeline>		GetPipeline() { return _pipeline; }
+	shared_ptr<RenderManager>	GetRenderManager() { return _renderManager; }
 
 private:
 	HWND					_hWnd;
 
 private:
 	shared_ptr<Graphics>	_graphcis;
-	shared_ptr<Pipeline>	_pipeline;
 
 private:
 	shared_ptr<SceneManager>		_sceneManager;
 	shared_ptr<TimeManager>			_timeManager;
 	shared_ptr<InputManager>		_inputManager;
 	shared_ptr<ResourceManager>		_resourceManager;
+	shared_ptr<RenderManager>		_renderManager;
 
 };
 

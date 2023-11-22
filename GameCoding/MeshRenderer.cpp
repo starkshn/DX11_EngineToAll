@@ -30,101 +30,37 @@ MeshRenderer::MeshRenderer(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceConte
 	_pixelShader = make_shared<PixelShader>(_device);
 	_pixelShader->Create(L"Default.hlsl", "PS", "ps_5_0");
 
-	// 7. 원하는 방식으로 셋팅 하는 부분
-	_rasterizerState = make_shared<RasterizerState>(_device);
-	_rasterizerState->Create();
-
-	// 8. 어떻게 섞여야 할지 나타내는 부분
-	_blendState = make_shared<BlendState>(_device);
-	_blendState->Create();
-
-	// 9. 상수 버퍼
-	_cameraBuffer = make_shared<ConstantBuffer<CameraData>>(_device, _deviceContext);
-	_cameraBuffer->Create();
-
-	_transformBuffer = make_shared<ConstantBuffer<TransformData>>(_device, _deviceContext);
-	_transformBuffer->Create();
-
 	// 10. 
 	_texture1 = make_shared<Texture>(_device);
 	_texture1->Create(L"BFS.jpg");
-
-	// 11.
-	_samplerState = make_shared<SamplerState>(_device);
-	_samplerState->Create();
 }
 
 MeshRenderer::~MeshRenderer()
 {
+
 }
 
 void MeshRenderer::Awake()
 {
+
 }
 
 void MeshRenderer::Start()
 {
+
 }
 
 void MeshRenderer::Update()
 {
-	{
-		// Camera
-		_cameraData.matView = Camera::S_MatView;
-		_cameraData.matProjection = Camera::S_MatProjection;
-		// _cameraData.matView = Matrix::Identity;
-		// _cameraData.matProjection = Matrix::Identity;
 
-		// CPU -> GPU로의 데이터 복사
-		_cameraBuffer->CopyData(_cameraData);
-	}
-	
-
-	{
-		// 일반 GameObject (Monster)
-		_transformData.matWorld = GetTransform()->GetWorldMatrix();
-
-		// CPU -> GPU로의 데이터 복사
-		_transformBuffer->CopyData(_transformData);
-	}
-
-	// Render
-	Render(PIPE);
 }
 
 void MeshRenderer::LateUpdate()
 {
+
 }
 
 void MeshRenderer::FixedUpdate()
 {
-}
 
-void MeshRenderer::Render(shared_ptr<Pipeline> pipeline)
-{
-	PipelineInfo info;
-	info.inputLayout		= _inputLayout;
-	info.vertexShader		= _vertexShader;
-	info.pixelShader		= _pixelShader;
-	info.rasterizerState	= _rasterizerState;
-	info.blendState			= _blendState;
-	info.topology			= D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
-	pipeline->UpdatePipeline(info);
-
-	// IA
-	pipeline->SetVertexBuffer(_vertexBuffer);
-	pipeline->SetIndexBuffer(_indexBuffer);
-
-	// VS
-	pipeline->SetConstantBuffer(0, SS_VertexShader, _cameraBuffer);
-	pipeline->SetConstantBuffer(1, SS_VertexShader, _transformBuffer);
-
-	// RS
-
-	// PS
-	pipeline->SetTexture(0, SS_PixelShader, _texture1);
-	pipeline->SetSamplerState(0, SS_PixelShader, _samplerState);
-
-	// OM
-	pipeline->DrawIndexed(_geometry_V->GetIndexCount(), 0, 0);
 }

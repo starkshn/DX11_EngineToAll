@@ -8,6 +8,7 @@
 #include "TimeManager.h"
 #include "InputManager.h"
 #include "ResourceManager.h"
+#include "RenderManager.h"
 
 unique_ptr<Game> GGame = make_unique<Game>();
 
@@ -26,7 +27,6 @@ void Game::Init(HWND hWnd)
 	_hWnd			= hWnd;
 
 	_graphcis		= make_shared<Graphics>(hWnd);
-	_pipeline		= make_shared<Pipeline>(_graphcis->GetDeviceContext());
 
 	_sceneManager	= make_shared<SceneManager>(_graphcis);
 	_sceneManager->Init();
@@ -39,27 +39,21 @@ void Game::Init(HWND hWnd)
 
 	_resourceManager = make_shared<ResourceManager>(_graphcis->GetDevice());
 	_resourceManager->Init();
+	
+	_renderManager = make_shared<RenderManager>(_graphcis->GetDevice(), _graphcis->GetDeviceContext());
+	_renderManager->Init();
 
 	SCENE->LoadScene(L"Test");
 }
 
 void Game::Update()
 {
-	_graphcis->RenderBegin();
-
 	TIME->Update();
 	INPUT->Update();
 	SCENE->Update();
-	
-	_graphcis->RenderEnd();
 }
 
 void Game::Render()
 {
-	
-
-	{
-		
-	}
-
+	RENDER->Update(_graphcis);
 }

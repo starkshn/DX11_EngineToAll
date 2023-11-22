@@ -19,6 +19,8 @@ G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\MonoBehavior.cpp;G:\DirecX
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\pch.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\pch.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Pipeline.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Pipeline.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\RasterizerState.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\RasterizerState.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\RenderHelper.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\RenderHelper.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\RenderManager.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\RenderManager.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceBase.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\ResourceBase.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceManager.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\ResourceManager.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\SamplerState.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\SamplerState.obj

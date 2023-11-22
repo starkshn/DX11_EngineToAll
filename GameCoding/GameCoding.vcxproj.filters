@@ -88,6 +88,9 @@
     <Filter Include="소스 파일\00.Engine\Resource_Base">
       <UniqueIdentifier>{f346e4b0-9724-4f14-b7d3-07a9e79b2bd0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\00.Engine\Manager\Render">
+      <UniqueIdentifier>{d98ff269-4ea9-4d5f-b43c-1684aff3accc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -210,6 +213,12 @@
     <ClInclude Include="ResourceBase.h">
       <Filter>소스 파일\00.Engine\Resource_Base</Filter>
     </ClInclude>
+    <ClInclude Include="RenderManager.h">
+      <Filter>소스 파일\00.Engine\Manager\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderHelper.h">
+      <Filter>소스 파일\00.Engine\Manager\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameCoding.rc">
@@ -326,6 +335,12 @@
     </ClCompile>
     <ClCompile Include="ResourceBase.cpp">
       <Filter>소스 파일\00.Engine\Resource_Base</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderManager.cpp">
+      <Filter>소스 파일\00.Engine\Manager\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderHelper.cpp">
+      <Filter>소스 파일\00.Engine\Manager\Render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
