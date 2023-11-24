@@ -6,6 +6,7 @@
 #include "SceneManager.h"
 #include "Scene.h"
 #include "Game.h"
+#include "Mesh.h"
 
 RenderManager::RenderManager(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext)
 	: _device(device), _deviceContext(deviceContext)
@@ -93,17 +94,17 @@ void RenderManager::RenderObjects()
 		PushTransformData();
 		
 		PipelineInfo info;
-		info.inputLayout = meshRenderer->_inputLayout;
-		info.vertexShader = meshRenderer->_vertexShader;
-		info.pixelShader = meshRenderer->_pixelShader;
+		info.inputLayout = meshRenderer->GetInputLayout();
+		info.vertexShader = meshRenderer->GetVertexShader();
+		info.pixelShader = meshRenderer->GetPixelShader();
 		info.rasterizerState = _rasterizerState;
 		info.blendState = _blendState;
 		info.topology = D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 		_pipeLine->UpdatePipeline(info);
 
 		// IA
-		_pipeLine->SetVertexBuffer(meshRenderer->_vertexBuffer);
-		_pipeLine->SetIndexBuffer(meshRenderer->_indexBuffer);
+		_pipeLine->SetVertexBuffer(meshRenderer->GetMesh()->GetVertexBuffer());
+		_pipeLine->SetIndexBuffer(meshRenderer->GetMesh()->GetIndexBuffer());
 
 		// VS
 		_pipeLine->SetConstantBuffer(0, SS_VertexShader, _cameraBuffer);
@@ -112,11 +113,10 @@ void RenderManager::RenderObjects()
 		// RS
 
 		// PS
-		_pipeLine->SetTexture(0, SS_PixelShader, meshRenderer->_texture1);
+		_pipeLine->SetTexture(0, SS_PixelShader, meshRenderer->GetTexture());
 		_pipeLine->SetSamplerState(0, SS_PixelShader, _samplerState);
 
 		// OM
-		_pipeLine->DrawIndexed(meshRenderer->_geometry_V->GetIndexCount(), 0, 0);
-		
+		_pipeLine->DrawIndexed(meshRenderer->GetMesh()->GetIndexBuffer()->GetCount(), 0, 0);
 	}
 }
