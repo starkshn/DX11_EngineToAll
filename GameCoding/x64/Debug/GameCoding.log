@@ -1,2 +1,93 @@
-﻿  CameraMove.cpp
+﻿  pch.cpp
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceBase.h(5,10): warning C4309: 'initializing': truncation of constant value
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceBase.h(5,10): warning C4369: 'ResourceType::None':  enumerator value '-1' cannot be represented as 'unsigned char', value is '255'
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceBase.h(7,6): warning C4340: 'Mesh': value wrapped from positive to negative value
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceBase.h(7): warning C4309: 'initializing': truncation of constant value
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ResourceBase.h(7): warning C4369: 'ResourceType::Mesh':  enumerator value '256' cannot be represented as 'unsigned char', value is '0'
+  Animation.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xstring(2824,53): warning C4244: 'argument': conversion from 'const wchar_t' to 'const _Elem', possible loss of data
+          with
+          [
+              _Elem=char
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xstring(2664): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*>(_Iter,const _Iter)' being compiled
+          with
+          [
+              _Iter=const wchar_t *
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\xstring(2664): message : see reference to function template instantiation 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct_from_iter<const wchar_t*>(_Iter,const _Iter)' being compiled
+          with
+          [
+              _Iter=const wchar_t *
+          ]
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Animation.cpp(20): message : see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Animation.cpp(20): message : see reference to function template instantiation 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<std::_String_const_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(_Iter,_Iter,const _Alloc &)' being compiled
+          with
+          [
+              _Elem=wchar_t,
+              _Iter=std::_String_const_iterator<std::_String_val<std::_Simple_types<wchar_t>>>,
+              _Alloc=std::allocator<char>
+          ]
+  Animator.cpp
+  BlendState.cpp
+  Camera.cpp
+  CameraMove.cpp
+  Component.cpp
+  ConstantBuffer.cpp
+  Game.cpp
+  GameCoding.cpp
+  GameObject.cpp
+  Geometry.cpp
+  GeometryHelper.cpp
+  Graphics.cpp
+  IndexBuffer.cpp
+  InputLayout.cpp
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\InputLayout.cpp(18,133): warning C4267: 'argument': conversion from 'size_t' to 'UINT', possible loss of data
+  InputManager.cpp
+  Material.cpp
+  Mesh.cpp
+  MeshRenderer.cpp
+  MonoBehaviour.cpp
+  Generating Code...
+  Compiling...
+  Pipeline.cpp
+  RasterizerState.cpp
+  RenderHelper.cpp
+  RenderManager.cpp
+  ResourceBase.cpp
+  ResourceManager.cpp
+  SamplerState.cpp
+  Scene.cpp
+  SceneManager.cpp
+  Shader.cpp
+  ShaderBase.cpp
+  SimpleMath.cpp
+  Texture.cpp
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Texture.cpp(30,14): warning C4244: '=': conversion from 'size_t' to 'float', possible loss of data
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Texture.cpp(31,14): warning C4244: '=': conversion from 'size_t' to 'float', possible loss of data
+  TimeManager.cpp
+  Transform.cpp
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Transform.cpp(33,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Transform.cpp(38,40): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Transform.cpp(43,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  VertexBuffer.cpp
+  VertexData.cpp
+  tinyxml2.cpp
+  Generating Code...
+DirectXTex_debug.lib(DirectXTexImage.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexImage.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(DirectXTexWIC.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexWIC.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(DirectXTexD3D11.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexD3D11.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(DirectXTexUtil.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexUtil.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(DirectXTexConvert.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexConvert.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(DirectXTexMipMaps.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexMipMaps.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(DirectXTexCompress.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexCompress.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(BC.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(BC.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(BC4BC5.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(BC4BC5.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+DirectXTex_debug.lib(BC6HBC7.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(BC6HBC7.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
   GameCoding.vcxproj -> G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\GameCoding.exe

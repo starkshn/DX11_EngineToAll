@@ -30,7 +30,7 @@ protected:
 
 public:
 	void SetName(const wstring& name) { _name = name; }
-	const wstring GetName() { return _name; }
+	const wstring& GetName() { return _name; }
 	
 	const ResourceType GetType() { return _type; }
 	const uint32 GetId() { return _id; }

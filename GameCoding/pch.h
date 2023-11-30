@@ -15,6 +15,10 @@ using namespace std;
 
 #include <memory>
 
+// Utils
+#include "tinyxml2.h"
+using namespace tinyxml2;
+
 // WIN API
 #include <windows.h>
 #include <assert.h>

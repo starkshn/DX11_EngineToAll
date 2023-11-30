@@ -91,6 +91,9 @@
     <Filter Include="소스 파일\00.Engine\Manager\Render">
       <UniqueIdentifier>{d98ff269-4ea9-4d5f-b43c-1684aff3accc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\99.Headers\Utils">
+      <UniqueIdentifier>{0366bb52-af3f-4029-85f9-df6f5ba87d79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -225,6 +228,9 @@
     <ClInclude Include="CameraMove.h">
       <Filter>소스 파일\01.Main</Filter>
     </ClInclude>
+    <ClInclude Include="tinyxml2.h">
+      <Filter>소스 파일\99.Headers\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameCoding.rc">
@@ -353,6 +359,9 @@
     </ClCompile>
     <ClCompile Include="CameraMove.cpp">
       <Filter>소스 파일\01.Main</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml2.cpp">
+      <Filter>소스 파일\99.Headers\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
