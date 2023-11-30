@@ -22,6 +22,14 @@ cbuffer TransformData : register(b1)
     row_major matrix matWorld;
 }
 
+cbuffer AnimationData : register(b2)
+{
+    float2  spriteOffset;
+    float2  spriteSize;
+    float2  textureSize;
+    float   useAnimation;
+}
+
 // IA - VS - RS - PS - OM
 // 이 단계가 Vertex Shader 단계 진입점이다.
 // 아래의 함수는 '정점' 단위로 실행된다.
@@ -36,6 +44,13 @@ VS_OUTPUT VS(VS_INPUT input)
     
     output.position = position;
     output.uv = input.uv;
+    
+    if (useAnimation)
+    {
+        // 500 / 1000
+        output.uv *= spriteSize / textureSize;
+        output.uv += spriteOffset / textureSize;
+    }
     
     return output;
 }

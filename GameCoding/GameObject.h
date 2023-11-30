@@ -1,9 +1,10 @@
 #pragma once
 
-class MonoBehavior;
+class MonoBehaviour;
 class Trnasform;
 class Camera;
 class MeshRenderer;
+class Animator;
 
 class GameObject : public enable_shared_from_this<GameObject>
 {
@@ -28,6 +29,7 @@ public:
 	shared_ptr<Camera>			GetCamera();
 	shared_ptr<Camera>			GetOrAddCamera();
 	shared_ptr<MeshRenderer>	GetMeshRenderer();
+	shared_ptr<Animator>		GetAnimator();
 	// ..
 
 private:
@@ -35,5 +37,5 @@ private:
 
 protected:
 	array<shared_ptr<Component>, FIXED_COMPONENT_COUNT> _components;
-	vector<shared_ptr<MonoBehavior>> _scripts;
+	vector<shared_ptr<MonoBehaviour>> _scripts;
 };

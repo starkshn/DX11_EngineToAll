@@ -1,19 +1,2 @@
-﻿  Game.cpp
-  GameObject.cpp
-  MeshRenderer.cpp
-  RenderManager.cpp
-  ResourceBase.cpp
-  SceneManager.cpp
-  VertexData.cpp
-  Generating Code...
-DirectXTex_debug.lib(DirectXTexImage.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexImage.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(DirectXTexWIC.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexWIC.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(DirectXTexD3D11.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexD3D11.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(DirectXTexUtil.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexUtil.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(DirectXTexConvert.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexConvert.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(DirectXTexMipMaps.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexMipMaps.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(DirectXTexCompress.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(DirectXTexCompress.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(BC.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(BC.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(BC4BC5.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(BC4BC5.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
-DirectXTex_debug.lib(BC6HBC7.obj) : warning LNK4099: PDB 'DirectXTex.pdb' was not found with 'DirectXTex_debug.lib(BC6HBC7.obj)' or at 'G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\DirectXTex.pdb'; linking object as if no debug info
+﻿  CameraMove.cpp
   GameCoding.vcxproj -> G:\DirecX11\DX11_Projects\DX11_EngineToAll\Binaries\GameCoding.exe

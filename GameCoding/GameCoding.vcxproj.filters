@@ -171,7 +171,7 @@
     <ClInclude Include="Transform.h">
       <Filter>소스 파일\00.Engine\Component</Filter>
     </ClInclude>
-    <ClInclude Include="MonoBehavior.h">
+    <ClInclude Include="MonoBehaviour.h">
       <Filter>소스 파일\00.Engine\Component</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
@@ -218,6 +218,12 @@
     </ClInclude>
     <ClInclude Include="RenderHelper.h">
       <Filter>소스 파일\00.Engine\Manager\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>소스 파일\00.Engine\Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraMove.h">
+      <Filter>소스 파일\01.Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -294,7 +300,7 @@
     <ClCompile Include="Transform.cpp">
       <Filter>소스 파일\00.Engine\Component</Filter>
     </ClCompile>
-    <ClCompile Include="MonoBehavior.cpp">
+    <ClCompile Include="MonoBehaviour.cpp">
       <Filter>소스 파일\00.Engine\Component</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
@@ -341,6 +347,12 @@
     </ClCompile>
     <ClCompile Include="RenderHelper.cpp">
       <Filter>소스 파일\00.Engine\Manager\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>소스 파일\00.Engine\Component\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraMove.cpp">
+      <Filter>소스 파일\01.Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

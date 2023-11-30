@@ -8,7 +8,8 @@
 #include "ResourceManager.h"
 #include "Game.h"
 #include "Mesh.h"
-
+#include "Animator.h"
+#include "CameraMove.h"
 
 SceneManager::SceneManager(shared_ptr<Graphics> graphics)
 	: _graphics(graphics)
@@ -57,8 +58,12 @@ shared_ptr<Scene> SceneManager::LoadTestScene()
 		{
 			camera->GetOrAddTransform();
 			camera->AddComponent(make_shared<Camera>());
-			scene->AddGameObject(camera);
+
+			// Test
+			camera->AddComponent(make_shared<CameraMove>());
 		}
+
+		scene->AddGameObject(camera);
 	}
 
 	// GO
@@ -76,9 +81,43 @@ shared_ptr<Scene> SceneManager::LoadTestScene()
 
 			auto mesh = RESOURCES->Get<Mesh>(L"Rectangle");
 			meshRenderer->SetMesh(mesh);
-
-			scene->AddGameObject(monster);
 		}
+
+		{
+			auto animator = make_shared<Animator>();
+			monster->AddComponent(animator);
+			auto anim = RESOURCES->Get<Animation>(L"SnakeAnim");
+			animator->SetAnimation(anim);
+		}
+
+		scene->AddGameObject(monster);
+	}
+
+	{
+		shared_ptr<GameObject> monster2 = make_shared<GameObject>(_graphics->GetDevice(), _graphics->GetDeviceContext());
+		monster2->GetOrAddTransform()->SetPosition(Vec3(-1.f, 1.f, 0.f));
+		{
+			// 여기서 크기를 100배로 늘리거나...
+			monster2->GetOrAddTransform();
+
+			auto meshRenderer = make_shared<MeshRenderer>(_graphics->GetDevice(), _graphics->GetDeviceContext());
+			monster2->AddComponent(meshRenderer);
+
+			auto material = RESOURCES->Get<Material>(L"DefaultMaterial");
+			meshRenderer->SetMaterial(material);
+
+			auto mesh = RESOURCES->Get<Mesh>(L"Rectangle");
+			meshRenderer->SetMesh(mesh);
+		}
+
+		{
+			auto animator = make_shared<Animator>();
+			monster2->AddComponent(animator);
+			auto anim = RESOURCES->Get<Animation>(L"SnakeAnim");
+			animator->SetAnimation(anim);
+		}
+
+		scene->AddGameObject(monster2);
 	}
 	
 	return scene;

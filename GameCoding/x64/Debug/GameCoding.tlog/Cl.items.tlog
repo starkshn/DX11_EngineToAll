@@ -1,6 +1,8 @@
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Animation.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Animation.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Animator.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Animator.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\BlendState.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\BlendState.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Camera.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Camera.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\CameraMove.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\CameraMove.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Component.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Component.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\ConstantBuffer.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\ConstantBuffer.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Game.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Game.obj
@@ -15,7 +17,7 @@ G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\InputManager.cpp;G:\DirecX
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Material.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Material.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Mesh.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Mesh.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\MeshRenderer.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\MeshRenderer.obj
-G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\MonoBehavior.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\MonoBehavior.obj
+G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\MonoBehaviour.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\MonoBehaviour.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\pch.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\pch.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\Pipeline.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\Pipeline.obj
 G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\RasterizerState.cpp;G:\DirecX11\DX11_Projects\DX11_EngineToAll\GameCoding\x64\Debug\RasterizerState.obj

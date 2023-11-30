@@ -26,4 +26,7 @@ void Texture::Create(const wstring& path)
 		md, _shaderResourceView.GetAddressOf()
 	);
 	C(hr);
+
+	_size.x = md.width;
+	_size.y = md.height;
 }

@@ -7,6 +7,7 @@
 #include "Scene.h"
 #include "Game.h"
 #include "Mesh.h"
+#include "Animator.h"
 
 RenderManager::RenderManager(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext)
 	: _device(device), _deviceContext(deviceContext)
@@ -28,6 +29,10 @@ void RenderManager::Init()
 
 	_transformBuffer = make_shared<ConstantBuffer<TransformData>>(_device, _deviceContext);
 	_transformBuffer->Create();
+
+	// Animation
+	_animationBuffer = make_shared<ConstantBuffer<AnimationData>>(_device, _deviceContext);
+	_animationBuffer->Create();
 
 	// 7. 원하는 방식으로 셋팅 하는 부분
 	_rasterizerState = make_shared<RasterizerState>(_device);
@@ -64,6 +69,11 @@ void RenderManager::PushTransformData()
 	_transformBuffer->CopyData(_transformData);
 }
 
+void RenderManager::PushAnimationData()
+{
+	_animationBuffer->CopyData(_animationData);
+}
+
 void RenderManager::GatherRenderableObjects()
 {
 	_renderObjects.clear();
@@ -92,6 +102,32 @@ void RenderManager::RenderObjects()
 		// SRT
 		_transformData.matWorld = transform->GetWorldMatrix();
 		PushTransformData();
+
+		// Animation
+		shared_ptr<Animator> animator = gameObject->GetAnimator();
+		if (animator)
+		{
+			const Keyframe& keyframe = animator->GetCurrentKeyframe();
+			_animationData.spriteOffset = keyframe.offset;
+			_animationData.spriteSize = keyframe.size;
+			_animationData.textureSize = animator->GetCurrentAnimation()->GetTextureSize();
+			_animationData.useAnimation = 1.f;
+			PushAnimationData();
+
+			_pipeLine->SetConstantBuffer(2, SS_VertexShader, _animationBuffer);
+			_pipeLine->SetTexture(0, SS_PixelShader, animator->GetCurrentAnimation()->GetTexture());
+		}
+		else
+		{
+			_animationData.spriteOffset = Vec2(0.f, 0.f);
+			_animationData.spriteSize = Vec2(0.f, 0.f);
+			_animationData.textureSize = Vec2(0.f, 0.f);
+			_animationData.useAnimation = 0.f;
+			PushAnimationData();
+
+			_pipeLine->SetConstantBuffer(2, SS_VertexShader, _animationBuffer);
+			_pipeLine->SetTexture(0, SS_PixelShader, meshRenderer->GetTexture());
+		}
 		
 		PipelineInfo info;
 		info.inputLayout = meshRenderer->GetInputLayout();
@@ -113,7 +149,7 @@ void RenderManager::RenderObjects()
 		// RS
 
 		// PS
-		_pipeLine->SetTexture(0, SS_PixelShader, meshRenderer->GetTexture());
+		// _pipeLine->SetTexture(0, SS_PixelShader, meshRenderer->GetTexture());
 		_pipeLine->SetSamplerState(0, SS_PixelShader, _samplerState);
 
 		// OM

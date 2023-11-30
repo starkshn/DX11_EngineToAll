@@ -1,9 +1,10 @@
 #include "pch.h"
 #include "GameObject.h"
-#include "MonoBehavior.h"
+#include "MonoBehaviour.h"
 #include "Transform.h"
 #include "Camera.h"
 #include "MeshRenderer.h"
+#include "Animator.h"
 
 
 GameObject::GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext)
@@ -25,7 +26,7 @@ void GameObject::Awake()
 			component->Awake();
 	}
 
-	for (shared_ptr<MonoBehavior>& script : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
 		script->Awake();
 	}
@@ -39,7 +40,7 @@ void GameObject::Start()
 			component->Start();
 	}
 
-	for (shared_ptr<MonoBehavior>& script : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
 		script->Start();
 	}
@@ -53,14 +54,13 @@ void GameObject::Update()
 			component->Update();
 	}
 
-	for (shared_ptr<MonoBehavior>& script : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
 		script->Update();
 	}
 
 	if (GetCamera())
 		return;
-	
 }
 
 void GameObject::LateUpdate()
@@ -71,7 +71,7 @@ void GameObject::LateUpdate()
 			component->LateUpdate();
 	}
 
-	for (shared_ptr<MonoBehavior>& script : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
 		script->LateUpdate();
 	}
@@ -85,7 +85,7 @@ void GameObject::FixedUpdate()
 			component->FixedUpdate();
 	}
 
-	for (shared_ptr<MonoBehavior>& script : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
 		script->FixedUpdate();
 	}
@@ -138,6 +138,12 @@ shared_ptr<MeshRenderer> GameObject::GetMeshRenderer()
 	return static_pointer_cast<MeshRenderer>(comp);
 }
 
+shared_ptr<Animator> GameObject::GetAnimator()
+{
+	shared_ptr<Component> comp = GetFixedComponent(ComponentType::Animator);
+	return static_pointer_cast<Animator>(comp);
+}
+
 void GameObject::AddComponent(shared_ptr<Component> component)
 {
 	// this의 스마트 포인터 버젼
@@ -151,6 +157,6 @@ void GameObject::AddComponent(shared_ptr<Component> component)
 	else
 	{
 		// static_pointer_cast해도 상관없음(타입이 확실하니까)
-		_scripts.push_back(dynamic_pointer_cast<MonoBehavior>(component));
+		_scripts.push_back(dynamic_pointer_cast<MonoBehaviour>(component));
 	}	
 }
